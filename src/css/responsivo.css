@@ -1,0 +1,62 @@
+@media (max-width: 900px) {
+    body {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 375px) {
+    body {
+        flex-direction: column;
+        display: flex;
+        padding: 60px 5.6%;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .text {
+        width: 270px;
+        height: 100px;
+        gap: 5px;
+    }
+
+    .text .title {
+        font-size: 1.5rem;
+        line-height: 22px;
+    }
+
+    .text .descripton {
+        font-size: 1.5rem;
+        line-height: 16px;
+    }
+
+    .main-container .form {
+        width: 300px;
+        height: 350px;
+    }
+
+    .main-container .form .inputItem {
+        width: 250px;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+
+    .main-container .form .btn-send {
+        width: 260.01px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}

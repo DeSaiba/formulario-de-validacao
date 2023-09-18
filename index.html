@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com validação</title>
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/button.css">
+    <link rel="stylesheet" href="./images/">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+
+</head>
+
+<body>
+    <main class="main-container">
+        <div class="text">
+            <h2 class="title">FICOU COM DÚVIDA? <br> NOS MADE UMA MENSAGEM</h2>
+            <p class="descripton">caso tenha ficado com qualquer dúvida basta nos mandar uma mensagem e entraremos me
+                contato em menos de 24h.</p>
+        </div>
+
+        <div class="form">
+            <div class="form-date">
+                <input class="inputItem" type="text" name="name" id="inputName" placeholder="Nome completo *">
+                <span class="warning">campo obrigatório</span>
+
+                <input class="inputItem" type="email" name="email" id="inputEmail" placeholder="Email *">
+                <span class="warning">campo obrigatório</span>
+
+                <input class="inputItem" type="phone" name="phone" id="inputPhone" placeholder="Telefone *">
+                <span class="warning">campo obrigatório</span>
+
+                <input class="inputItem mensagemItem" type="text" name="mensagem" id="inputMensagem"
+                    placeholder="Mensagem *">
+                <span class="warning">campo obrigatório</span>
+            </div>
+
+            <h3 class="required-field">*campos obrigatórios</h3>
+
+            <button href="" target="_blank" class="btn-send">Enviar</button>
+    </main>
+
+    <script src="./src/js/script.js"></script>
+</body>
+</html>
