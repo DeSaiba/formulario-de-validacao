@@ -1,8 +1,28 @@
+const inputItem = document.querySelectorAll('.inputItem')
+const btnSend = document.querySelector('.btn-send')
+const warning = document.querySelectorAll('.warning');
+
+btnSend.addEventListener('click', (e) => {
+    e.preventDefault()
+
+    inputItem.forEach((input) => {
+        if (input.value) {
+            input.classList.add('border-green')
+            input.nextElementSibling.classList.remove('border-red')
+        } else {
+            input.classList.remove('border-green')
+            input.classList.add('border-red')
+            input.nextElementSibling.classList.add('warning')
+        }
+    })
+})
+
+/*
 const inputItem = document.querySelectorAll('.inputItem');
 const btnSend = document.querySelector('.btn-send');
 const warning = document.querySelectorAll('.warning');
 
-inputItem.forEach((item, indice) => {
+inputItem.forEach((item) => {
     item.addEventListener("change", () => {
         if (item.value !== "") {
             item.classList.add("border-green")
@@ -11,7 +31,7 @@ inputItem.forEach((item, indice) => {
         };
     });
 
-    warning.forEach((opacity, indice) => {
+    warning.forEach((opacity) => {
         btnSend.addEventListener("click", () => {
             if (item.value === "") {
                 item.classList.add("border-red")
@@ -25,3 +45,4 @@ inputItem.forEach((item, indice) => {
         })
     })
 });
+*/
