@@ -1,48 +1,53 @@
-const inputItem = document.querySelectorAll('.inputItem')
-const btnSend = document.querySelector('.btn-send')
-const warning = document.querySelectorAll('.warning');
-
-btnSend.addEventListener('click', (e) => {
-    e.preventDefault()
-
-    inputItem.forEach((input) => {
-        if (input.value) {
-            input.classList.add('border-green')
-            input.nextElementSibling.classList.remove('border-red')
-        } else {
-            input.classList.remove('border-green')
-            input.classList.add('border-red')
-            input.nextElementSibling.classList.add('warning')
-        }
-    })
-})
-
-/*
-const inputItem = document.querySelectorAll('.inputItem');
+const inputItems = document.querySelectorAll('.inputItem');
 const btnSend = document.querySelector('.btn-send');
-const warning = document.querySelectorAll('.warning');
+const warnings = document.querySelectorAll('.warning');
 
-inputItem.forEach((item) => {
-    item.addEventListener("change", () => {
-        if (item.value !== "") {
-            item.classList.add("border-green")
-        } else {
+function updateFieldValidation(item) {
+    if (item.value !== "") {
+        item.classList.remove("border-red");
+        item.classList.add("border-green");
+    } else {
+        item.classList.remove("border-green");
+        item.classList.add("border-red");
+    }
+}
+
+function validateFields() {
+    let allFieldsValid = true;
+
+    inputItems.forEach((item) => {
+        if (item.value === "") {
             item.classList.add("border-red");
-        };
+            allFieldsValid = false;
+        } else {
+            item.classList.remove("border-red");
+        }
     });
 
-    warning.forEach((opacity) => {
-        btnSend.addEventListener("click", () => {
-            if (item.value === "") {
-                item.classList.add("border-red")
-                opacity.classList.remove("warning");
-                opacity.classList.add("opacity");
-            } else {
-                item.classList.remove("border-red");
-                opacity.classList.remove("opacity");
-                opacity.classList.add("warning");
-            }
-        })
-    })
+    warnings.forEach((opacity, i) => {
+        if (inputItems[i].value === "") {
+            opacity.classList.add("opacity");
+            opacity.classList.remove("warning");
+        } else {
+            opacity.classList.remove("opacity");
+            opacity.classList.add("warning");
+        }
+    });
+
+    return allFieldsValid;
+}
+
+inputItems.forEach((item) => {
+    item.addEventListener("change", () => {
+        updateFieldValidation(item);
+    });
 });
-*/
+
+btnSend.addEventListener("click", () => {
+    const allFieldsValid = validateFields();
+
+    if (allFieldsValid) {
+        // O código aqui é executado quando todos os campos estão preenchidos corretamente.
+        // Posso adicionar a lógica para enviar o formulário ou realizar outra ação aqui.
+    }
+});
